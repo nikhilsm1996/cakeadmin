@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-login',
@@ -7,19 +8,24 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  public username:string='';
-  public password:string='';
-  constructor(private router: Router,) { }
-  
-  ngOnInit(): void {
+  // public username:string='';
+  // public password:string='';
+  constructor(private _login:LoginService,private router: Router,) { }
+  loginUserData :any={}
+  errors=null
+  ngOnInit() {
+    
   }
-  LoginUser(){
-    if (this.username=='admin'&& this.password=='admin123'){
-      this.router.navigateByUrl('admin/dashboard')
-      // alert("You are successfully logged in")
-    }else{
-        alert("Invalid Credentials")
-    }
+ 
+  loginUser(){
+    this._login.loginUser(this.loginUserData).subscribe(res=> {
+      console.log(res)
+      localStorage.setItem('token',res.token)
+      this.router.navigate(['admin/dashboard'])
+     },  
+     err=> this.errors=err.error)
+    
   }
+
 
 }

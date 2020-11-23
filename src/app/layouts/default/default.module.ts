@@ -11,6 +11,9 @@ import {FormsModule} from '@angular/forms'
 import {MatTabsModule} from '@angular/material/tabs'
 import { NewProductComponent } from 'src/app/modules/products/new-product/new-product.component';
 import { NewProductCategoryComponent } from 'src/app/modules/products/new-product-category/new-product-category.component';
+import { LoginService } from 'src/app/modules/login/login.service';
+import { HttpClientModule } from '@angular/common/http';
+import { CategoryService } from 'src/app/modules/products/new-product-category/category.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { NewProductCategoryComponent } from 'src/app/modules/products/new-produc
     SharedModule,
     MatSidenavModule,
     FormsModule,
-    MatTabsModule
-  ]
+    MatTabsModule,
+    HttpClientModule
+  ],
+  providers:[LoginService,CategoryService]
 })
 export class DefaultModule { }
