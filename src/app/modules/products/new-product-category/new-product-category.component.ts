@@ -1,22 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from './category.service';
-
+import {Category } from '../category.model'
+import {NgForm} from '@angular/forms'
 @Component({
   selector: 'app-new-product-category',
   templateUrl: './new-product-category.component.html',
   styleUrls: ['./new-product-category.component.css']
 })
 export class NewProductCategoryComponent implements OnInit {
-  prodCategory:any={}
-  constructor(private _cat:CategoryService) { }
+  
+  constructor(public catService:CategoryService) { }
 
   ngOnInit(): void {
   }
-  addCategory(){
-    this._cat.addCategory(this.prodCategory).subscribe(res=> {
-      console.log(res)
-     }, 
-     err=> console.log(err))
+  addCategory(form:NgForm){
+    if(form.invalid){
+      return
+    }
+    
+    this.catService.addCategory(form.value.category,form.value.code)
   }
 
 }

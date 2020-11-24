@@ -6,14 +6,18 @@ import { LoginComponent } from './modules/login/login.component';
 import { NewProductCategoryComponent } from './modules/products/new-product-category/new-product-category.component';
 import { NewProductComponent } from './modules/products/new-product/new-product.component';
 import { ProductsComponent } from './modules/products/products.component';
+import { NewProductCategoryListComponent} from '/home/nikhil123/timex/Ruchi-Cakes/src/app/modules/products/new-product-category/new-product-category-list/new-product-category-list.component'
 
 const routes: Routes = [{
   path: '', component:LoginComponent
-},{path:'admin',component:DefaultComponent,
+},
+{path:'new-category',component:NewProductCategoryComponent},{path:'admin',component:DefaultComponent,
 children:[{path:'dashboard',component:DashboardComponent},
+{path:'new-category-list',component:NewProductCategoryListComponent},
             {path:'products',component:ProductsComponent,children:[{
               path:'new-product',component:NewProductComponent
-            },{path:'new-category',component:NewProductCategoryComponent}]} ]}
+            }
+            ]} ]}
 
 ];
 

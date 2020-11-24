@@ -1,0 +1,12 @@
+<mat-accordion multi="true">
+    <mat-expansion-panel *ngFor="let cat of categories">
+<mat-expansion-panel-header>
+    
+      {{cat.categoryName}}
+    
+    </mat-expansion-panel-header>
+      <p>{{cat.categoryCode}} </p>
+      </mat-expansion-panel>
+
+ 
+</mat-accordion>

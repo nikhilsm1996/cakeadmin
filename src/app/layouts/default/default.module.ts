@@ -9,11 +9,13 @@ import {MatSidenavModule} from '@angular/material/sidenav'
 import { LoginComponent } from 'src/app/modules/login/login.component';
 import {FormsModule} from '@angular/forms'
 import {MatTabsModule} from '@angular/material/tabs'
+import {MatExpansionModule} from '@angular/material/expansion';
 import { NewProductComponent } from 'src/app/modules/products/new-product/new-product.component';
 import { NewProductCategoryComponent } from 'src/app/modules/products/new-product-category/new-product-category.component';
-import { LoginService } from 'src/app/modules/login/login.service';
+
 import { HttpClientModule } from '@angular/common/http';
-import { CategoryService } from 'src/app/modules/products/new-product-category/category.service';
+import {NewProductCategoryListComponent} from '/home/nikhil123/timex/Ruchi-Cakes/src/app/modules/products/new-product-category/new-product-category-list/new-product-category-list.component'
+//import { CategoryService } from 'src/app/modules/products/new-product-category/category.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { CategoryService } from 'src/app/modules/products/new-product-category/c
     ProductsComponent,
     LoginComponent,
     NewProductComponent,
-    NewProductCategoryComponent
+    NewProductCategoryComponent,
+    NewProductCategoryListComponent
   ],
   imports: [
     CommonModule,
@@ -31,8 +34,10 @@ import { CategoryService } from 'src/app/modules/products/new-product-category/c
     MatSidenavModule,
     FormsModule,
     MatTabsModule,
+    MatExpansionModule,
     HttpClientModule
   ],
-  providers:[LoginService,CategoryService]
+  
+  providers:[]
 })
 export class DefaultModule { }
