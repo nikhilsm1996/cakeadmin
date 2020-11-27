@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Product} from './products.model'
+import {CategoryService} from '/home/nikhil123/timex/Ruchi-Cakes/src/app/modules/products/new-product-category/category.service'
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -13,7 +14,7 @@ export class ProductsComponent implements OnInit {
   //   new Product('Fudgy Chocolate Cake','category4','sample recipes3','sample description3','https://www.ndtv.com/cooks/images/coffee-cake_article.jpg',950,10,'1 KG'),
 
   // ]
-  constructor() { }
+  constructor(public catService:CategoryService) { }
 
   ngOnInit(): void {
   }

@@ -6,12 +6,20 @@
 </div>
 <hr> --> 
 <mat-tab-group>
-    <mat-tab label="View"> 
+    <mat-tab label="View Category"> 
      <br>   
-     <p>Product Listing will be shown Below</p>   
-     <a routerLink = 'new-category'>Go to new category</a>
+     <app-new-product-category-list></app-new-product-category-list>
+     <p>Category Listing will be shown Below</p>   
+     
 
     </mat-tab>
+    <mat-tab label="View Product"> 
+        <br>   
+        
+        <p>Product Listing will be shown Below</p>   
+        
+   
+       </mat-tab>
     <mat-tab label="Add Product"> 
         <br>
         <app-new-product></app-new-product>

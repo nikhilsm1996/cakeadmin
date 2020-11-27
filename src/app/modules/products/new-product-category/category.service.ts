@@ -34,8 +34,21 @@ addCategory(categoryName:string,categoryCode:string){
       categoryName:categoryName,
       categoryCode:categoryCode
     }
-    this.categories.push(category)
-    this.categoriesUpdated.next([...this.categories])
+
+    this.http
+    .post<any>("http://localhost:3000/api/new-product-category", category)
+    .subscribe(responseData => {
+    
+      this.categories.push(category);
+      console.log(category) 
+      this.categoriesUpdated.next([...this.categories])
+      
+    });
+
+
+
+   
+   
 }
 
  /* private _catUrl = "http://localhost:3000/api/new-product-category"
